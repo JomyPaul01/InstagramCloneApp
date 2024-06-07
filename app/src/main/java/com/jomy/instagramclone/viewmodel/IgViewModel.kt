@@ -342,10 +342,10 @@ class IgViewModel @Inject constructor(
 
     private fun getGeneralFeed() {
         postFeedProgress.value = true
-       // val currentTimeMillis = System.currentTimeMillis()
-        //val difference = 24 * 60 * 60 * 1000
-        val difference = 0
-        val currentTimeMillis = 0
+        val currentTimeMillis = System.currentTimeMillis()
+        val difference = 24 * 60 * 60 * 1000
+        //val difference = 0
+        //val currentTimeMillis = 0
         db.collection(Constants.POSTS)
             .whereGreaterThan(stringResourceProvider.getString(R.string.time), currentTimeMillis - difference).get()
             .addOnSuccessListener {
