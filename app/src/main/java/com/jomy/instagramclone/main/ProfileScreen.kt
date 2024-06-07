@@ -65,6 +65,7 @@ fun ProfileScreen(navController: NavController, viewModel: IgViewModel) {
             onSave = {
                 val userData = UserData(name = name, userName = username, bio = bio, imageUrl = viewModel.userData.value?.imageUrl)
                 viewModel.updateProfileData(userData)
+                navController.popBackStack()
             },
             onBack = { navigateTo(navController, DestinationScreen.MyPost.route) },
             onLogOut = {viewModel.onLogOut()})
